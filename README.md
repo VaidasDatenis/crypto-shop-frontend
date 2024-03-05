@@ -1,27 +1,66 @@
-# CryptoFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+# Cryptomarket
 
-## Development server
+Cryptomarket is a cutting-edge online marketplace that leverages the power of Angular 17 with NestJS and Prisma for backend services, enabling users to buy and sell items with cryptocurrency transactions. Inspired by platforms like Vinted, Cryptomarket aims to streamline peer-to-peer transactions by integrating blockchain technology for secure and transparent dealings. It leverages the latest features of Angular to deliver a responsive, efficient, and scalable web application. The project focuses on providing a seamless user experience while integrating cutting-edge web technologies.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Responsive Design**: Ensures the application is accessible and functional across various devices and screen sizes.
+- **Dynamic Content**: Utilizes Angular's powerful data binding and component-based architecture for dynamic content updates without page reloads.
+- **State Management**: Implements state management solutions for handling application state efficiently.
+- **Internationalization (i18n)**: Supports multiple languages to cater to a global audience.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+To get started with this Angular 17 project, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the repository**:
 
-## Running unit tests
+```bash
+git clone https://github.com/yourrepository/angular-frontend-project.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Navigate to the project directory**:
 
-## Running end-to-end tests
+```bash
+cd angular-frontend-project
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Install dependencies**:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. **Serve the application**:
+
+```bash
+ng serve
+```
+
+Visit `http://localhost:4200` in your browser to view the application.
+
+## Development Tools
+
+- **Angular CLI**: Utilizes Angular CLI for efficient project scaffolding, development, and testing.
+- **RxJS**: Implements RxJS for reactive programming patterns.
+- **TypeScript**: Leverages TypeScript for static type checking and modern JavaScript features.
+
+## Building for Production
+
+To build the application for production, run:
+
+```bash
+ng build --prod
+```
+
+This command compiles the application into output files optimized for production in the `dist/` directory.
+
+## Contributing
+
+Contributions to improve the project are welcome. Please read through the [contribution guidelines](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This Angular 17 frontend project is open-sourced under the [MIT license](LICENSE).
+
