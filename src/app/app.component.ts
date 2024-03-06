@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { MetaMaskService } from './services/meta-mask.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ErrorHandlerService } from './services/error-handler.service';
+import { AuthService } from './services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -23,16 +25,22 @@ import { ErrorHandlerService } from './services/error-handler.service';
 export class AppComponent {
   private metaMaskService = inject(MetaMaskService);
   private errorHandleService = inject(ErrorHandlerService);
+  private authService = inject(AuthService);
+  private toastr = inject(ToastrService);
 
   connectMetaMaskWallet() {
     this.metaMaskService.connectMetaMaskWallet().subscribe({
       next: (accounts) => {
-        console.log('Connected accounts:', accounts);
         // Proceed with any logic needed after successful connection
       },
       error: (error) => {
         this.errorHandleService.handleWalletError(error);
       }
     });
+  }
+
+  disconnect(): void {
+    this.authService.clearToken();
+    this.toastr.success('Wallet disconnected successfully.', 'Success');
   }
 }
