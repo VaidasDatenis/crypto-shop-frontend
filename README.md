@@ -1,5 +1,6 @@
 
 # Cryptomarket
+DISCLAIMER: do NOT use this code for real life purcheses! This is just a personal/profile - skill-based project. Every country have it's own laws and regulations for crypto use or/& purchesses.
 
 Cryptomarket is a cutting-edge online marketplace that leverages the power of Angular 17 with NestJS and Prisma for backend services, enabling users to buy and sell items with cryptocurrency transactions. Inspired by platforms like Vinted, Cryptomarket aims to streamline peer-to-peer transactions by integrating blockchain technology for secure and transparent dealings. It leverages the latest features of Angular to deliver a responsive, efficient, and scalable web application. The project focuses on providing a seamless user experience while integrating cutting-edge web technologies.
 
