@@ -1,0 +1,32 @@
+@import '../../styles.scss';
+
+.navigation-bar {
+  display: flex;
+  height: 4.375rem;
+  background-color: $base-white;
+
+  img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .header-title {
+    margin: 0 1rem;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .nav-connect-btn {
+    width: 120px;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    background-color: $base-background;
+  }
+
+  .menu-icon {
+    justify-content: flex-end;
+  }
+}
