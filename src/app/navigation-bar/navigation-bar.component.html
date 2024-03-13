@@ -1,0 +1,34 @@
+<mat-toolbar class="navigation-bar">
+  <img src="./assets/cryptomarket-logo.svg" alt="" />
+  <div class="header-title">
+    <span>Cryptomarket</span>
+  </div>
+  <span class="spacer"></span>
+  @if (authService.connectedAccount$ | async) {
+    {{ authService.connectedAccount$ | async }}
+  }
+  @if (authService.isConnected()) {
+    <button class="nav-connect-btn" (click)="authService.disconnect()">
+      Disconnect
+    </button>
+  } @else {
+    <button
+      class="nav-connect-btn"
+      (click)="openConnectDialog('500ms', '500ms')"
+    >
+      @if (authService.isLoadingSignal()) {
+        <mat-progress-spinner
+          mode="indeterminate"
+          [diameter]="25"
+        ></mat-progress-spinner>
+      } @else {
+        <button class="nav-connect-btn">Connect</button>
+      }
+    </button>
+  }
+  <div class="menu-icon">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
