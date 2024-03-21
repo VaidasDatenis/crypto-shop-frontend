@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   standalone: true,
@@ -7,4 +7,11 @@ import { Component } from "@angular/core";
   templateUrl: './item.component.html',
   styleUrl: './item.component.scss'
 })
-export class ItemComponent {}
+export class ItemComponent {
+  @Input() itemTitle!: string;
+  @Input() itemDescription!: string;
+  @Input() itemImages!: string;
+  @Input() itemPrice!: string;
+  @Input() currency!: string;
+  @Input() sellerId!: string;
+}

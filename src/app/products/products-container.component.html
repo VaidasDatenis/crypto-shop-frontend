@@ -1,11 +1,14 @@
 <div class="container">
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
-  <product-item />
+  @for (product of listOfProducts(); track product) {
+    <product-item
+      [itemTitle]="product.title"
+      [itemDescription]="product.description"
+      [itemImages]="product.images"
+      [itemPrice]="product.price"
+      [currency]="product.currency"
+      [sellerId]="product.sellerId"
+    />
+  } @empty {
+    <span>No items yet</span>
+  }
 </div>
