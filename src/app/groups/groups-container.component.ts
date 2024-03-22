@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { GroupItemComponent } from "./group/group-item.component";
 
 @Component({
@@ -6,6 +6,7 @@ import { GroupItemComponent } from "./group/group-item.component";
   standalone: true,
   imports: [GroupItemComponent],
   templateUrl: './groups-container.component.html',
-  styleUrl: './groups-container.component.scss'
+  styleUrl: './groups-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GroupsContainerComponent {}

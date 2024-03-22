@@ -9,6 +9,12 @@ export class AuthService {
   connectedAccountSignal = signal<string | null>(null);
   connectedAccount$ = toObservable(this.connectedAccountSignal);
 
+  accountBalanceSignal = signal<string | null>(null);
+  accountBalance$ = toObservable(this.accountBalanceSignal);
+
+  accountNetworkSignal = signal<string | null>(null);
+  accountNetwork$ = toObservable(this.accountNetworkSignal);
+
   isConnectedSubject = new BehaviorSubject<boolean>(false);
   isConnected = toSignal(this.isConnectedSubject);
 

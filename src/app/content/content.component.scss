@@ -1,7 +1,15 @@
 .main-container {
   display: flex;
 
+  .groups-container {
+    width: 20%;
+  }
+
   .products-container {
-    width: 100%;
+    width: 65%;
+  }
+
+  .wallet-container {
+    width: 15%;
   }
 }

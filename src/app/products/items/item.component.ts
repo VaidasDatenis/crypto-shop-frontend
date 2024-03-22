@@ -1,11 +1,12 @@
-import { Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
 @Component({
   standalone: true,
   selector: 'product-item',
   imports: [],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.scss'
+  styleUrl: './item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent {
   @Input() itemTitle!: string;

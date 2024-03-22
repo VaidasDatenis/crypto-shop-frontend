@@ -4,9 +4,6 @@
     <span>Cryptomarket</span>
   </div>
   <span class="spacer"></span>
-  @if (authService.connectedAccount$ | async) {
-    {{ authService.connectedAccount$ | async }}
-  }
   @if (authService.isConnected()) {
     <button class="nav-connect-btn" (click)="authService.disconnect()">
       Disconnect
