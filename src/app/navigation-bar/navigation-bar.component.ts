@@ -6,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { WalletsDialog } from '../wallets-dialog/wallets-dialog.component';
 import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
-import { MetaMaskService } from '../services/meta-mask.service';
 import { AsyncPipe } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -22,7 +21,6 @@ export class NavigationBarComponent {
   public walletDialog = inject(MatDialog);
   private toastr = inject(ToastrService);
   public authService = inject(AuthService);
-  public metamaskService = inject(MetaMaskService);
 
   openConnectDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.walletDialog.open(WalletsDialog, {
