@@ -1,0 +1,22 @@
+<mat-tab-group>
+  <mat-tab label="Products">
+    <ng-template matTabContent>
+      <all-products />
+    </ng-template>
+  </mat-tab>
+  <mat-tab [disabled]="!authService.isConnected()" label="My Products">
+    <ng-template matTabContent>
+      <my-products />
+    </ng-template>
+  </mat-tab>
+  <mat-tab [disabled]="!authService.isConnected()" label="Messages">
+    <ng-template matTabContent>
+      <all-products />
+    </ng-template>
+  </mat-tab>
+  <mat-tab [disabled]="!authService.isConnected()" label="Groups">
+    <ng-template matTabContent>
+      <all-products />
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

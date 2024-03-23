@@ -1,18 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from "@angular/core";
-import { ItemComponent } from "./items/item.component";
-import { RequestsService } from "../services/requests.service";
-import { Product } from "../iterfaces/product.interface";
-import { BehaviorSubject } from "rxjs";
+import { RequestsService } from "../../services/requests.service";
+import { Product } from "../../iterfaces/product.interface";
+import { ProductItemComponent } from "../product-item/product-item.component";
 
 @Component({
+  selector: 'all-products',
   standalone: true,
-  selector: 'products-container',
-  imports: [ItemComponent],
-  templateUrl: './products-container.component.html',
-  styleUrl: './products-container.component.scss',
+  imports: [ProductItemComponent],
+  templateUrl: 'all-products.component.html',
+  styleUrl: 'all-products.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductsContainerComponent implements OnInit {
+export class AllProductsComponent implements OnInit {
   requestService = inject(RequestsService);
 
   listOfProducts = signal<Product[]>([]);
