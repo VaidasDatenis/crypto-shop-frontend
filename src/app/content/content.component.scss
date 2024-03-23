@@ -1,15 +1,35 @@
 .main-container {
   display: flex;
+  height: 100%;
 
-  .groups-container {
-    width: 20%;
-  }
+  .sidenav-container {
+    width: 100%;
+    
+    .groups-container {
+      width: 20%;
+    }
+    
+    .sidenav-content {
+      display: flex;
+      
+      .sidenav-button {
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        background-color: rgba(240, 240, 240, 0.1);
 
-  .products-container {
-    width: 65%;
-  }
-
-  .wallet-container {
-    width: 15%;
+        .icon-btn {
+          margin-left: 15px;
+        }
+      }
+      
+      .products-container {
+        width: 80%;
+      }
+    
+      .wallet-container {
+        width: 20%;
+      }
+    }
   }
 }

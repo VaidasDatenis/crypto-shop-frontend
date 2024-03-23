@@ -1,6 +1,20 @@
 <navigation-bar />
 <div @flyInOut class="main-container">
-  <groups-content class="groups-container" />
-  <products-container class="products-container" />
-  <wallet-card class="wallet-container" />
+  <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer opened="true" class="groups-container" mode="side">
+      <groups-content />
+    </mat-drawer>
+    <div class="sidenav-content">
+      <button
+        class="sidenav-button"
+        mat-fab
+        aria-label="Example icon button with a bookmark icon"
+        (click)="toggleDrawer(drawer)"
+      >
+        <mat-icon class="icon-btn">{{ drawerIcon }}</mat-icon>
+      </button>
+      <products-container class="products-container" />
+      <wallet-card class="wallet-container" />
+    </div>
+  </mat-drawer-container>
 </div>

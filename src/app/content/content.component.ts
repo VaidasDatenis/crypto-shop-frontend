@@ -5,11 +5,14 @@ import { WalletCardComponent } from '../wallet-card/wallet-card.component';
 import { GroupsContainerComponent } from '../groups/groups-container.component';
 import { ProductsContainerComponent } from '../products/products-container.component';
 import { MetaMaskService } from '../services/meta-mask.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [NavigationBarComponent, WalletCardComponent, GroupsContainerComponent, ProductsContainerComponent],
+  imports: [NavigationBarComponent, WalletCardComponent, GroupsContainerComponent, ProductsContainerComponent, MatSidenavModule, MatButtonModule, MatIconModule],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
   animations: [Animations.connectNotification],
@@ -17,8 +20,14 @@ import { MetaMaskService } from '../services/meta-mask.service';
 })
 export class ContentComponent implements OnInit {
   metemaskService = inject(MetaMaskService);
+  drawerIcon: string = 'chevron_left';
 
   ngOnInit(): void {
     this.metemaskService.init();
+  }
+
+  toggleDrawer(drawer: any): void {
+    drawer.toggle();
+    this.drawerIcon = drawer.opened ? 'chevron_left' : 'chevron_right';
   }
 }
