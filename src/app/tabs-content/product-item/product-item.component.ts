@@ -4,11 +4,11 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
   standalone: true,
   selector: 'product-item',
   imports: [],
-  templateUrl: './item.component.html',
-  styleUrl: './item.component.scss',
+  templateUrl: './product-item.component.html',
+  styleUrl: './product-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemComponent {
+export class ProductItemComponent {
   @Input() itemTitle!: string;
   @Input() itemDescription!: string;
   @Input() itemImages!: string;

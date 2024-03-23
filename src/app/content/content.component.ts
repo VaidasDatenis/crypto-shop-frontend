@@ -3,7 +3,7 @@ import { NavigationBarComponent } from '../navigation-bar/navigation-bar.compone
 import { Animations } from '../animations/animations';
 import { WalletCardComponent } from '../wallet-card/wallet-card.component';
 import { GroupsContainerComponent } from '../groups/groups-container.component';
-import { ProductsContainerComponent } from '../products/products-container.component';
+import { TabsContainerComponent } from '../tabs-content/tabs-container.component';
 import { MetaMaskService } from '../services/meta-mask.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [NavigationBarComponent, WalletCardComponent, GroupsContainerComponent, ProductsContainerComponent, MatSidenavModule, MatButtonModule, MatIconModule],
+  imports: [NavigationBarComponent, WalletCardComponent, GroupsContainerComponent, TabsContainerComponent, MatSidenavModule, MatButtonModule, MatIconModule],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
   animations: [Animations.connectNotification],
