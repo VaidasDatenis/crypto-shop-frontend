@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
+  userId = signal<string | null>(null);
   connectedAccountSignal = signal<string | null>(null);
   connectedAccount$ = toObservable(this.connectedAccountSignal);
 
@@ -25,16 +26,25 @@ export class AuthService {
     return localStorage.getItem('access_token');
   }
 
-  setToken(token: { access_token: string }): void {
-    localStorage.setItem('access_token', token.access_token);
+  setUserId(userId: string) {
+    this.userId.update(() => userId);
+  }
+
+  setToken(token: string ): void {
+    localStorage.setItem('access_token', token);
   }
 
   clearToken(): void {
     localStorage.removeItem('access_token');
   }
 
+  clearUswerId() : void {
+    this.userId.update(() => null);
+  }
+
   disconnect() {
     this.clearToken();
+    this.clearUswerId();
     this.connectedAccountSignal.update(() => null);
     this.isConnectedSubject.next(false);
   }

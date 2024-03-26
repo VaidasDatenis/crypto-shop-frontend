@@ -1,0 +1,25 @@
+.create-form-btn {
+  display: flex;
+}
+
+.group-form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .group-form-field {
+    width: 400px;
+    border-radius: 15px;
+  }
+
+  .form-action-btns {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+
+    .form-btn {
+      margin: 10px;
+    }
+  }
+}
