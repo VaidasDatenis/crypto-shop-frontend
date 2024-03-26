@@ -1,0 +1,64 @@
+<div class="create-form-btn">
+  @if (!isFormOpen()) {
+    <button mat-button (click)="onOpenForm()">+ Create a group</button>
+  }
+</div>
+@if (isFormOpen()) {
+  <form
+    class="group-form-field"
+    [formGroup]="groupForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field class="group-form-field">
+      <mat-label for="group-name">Input</mat-label>
+      <input id="group-name" matInput formControlName="groupName" />
+      @if (groupForm.controls["groupName"].invalid) {
+        <mat-error>{{ errorMessage }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="group-form-field">
+      <mat-label>Description:</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="group-form-field">
+      <mat-label for="group-type">Group type</mat-label>
+      <mat-select id="group-type" formControlName="isPublic">
+        <mat-option value="null">-</mat-option>
+        <mat-option value="true">Public</mat-option>
+        <mat-option value="false">Private</mat-option>
+      </mat-select>
+      @if (groupForm.controls["isPublic"].invalid) {
+        <mat-error>{{ errorMessage }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="group-form-field">
+      <mat-label for="group-image">Upload groups image</mat-label>
+      <input
+        id="group-image"
+        matInput
+        type="text"
+        formControlName="groupImage"
+      />
+      @if (groupForm.controls["groupImage"].invalid) {
+        <mat-error>{{ errorMessage }}</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="form-action-btns">
+      <button class="form-btn" mat-button (click)="onCancelForm()">
+        Cancel
+      </button>
+      <button
+        class="form-btn"
+        mat-button
+        type="submit"
+        [disabled]="!groupForm.valid"
+      >
+        Create Group
+      </button>
+    </div>
+  </form>
+}

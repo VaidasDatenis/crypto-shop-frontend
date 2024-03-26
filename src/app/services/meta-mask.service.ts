@@ -48,7 +48,7 @@ export class MetaMaskService {
     });
   }
 
-  connectMetaMaskWallet(): Observable<string> {
+  connectMetaMaskWallet(): Observable<{ access_token: string; userId: string; }> {
     this.authService.isLoading.next(true);
     return this.getProvider().pipe(
       switchMap(provider => {
@@ -68,9 +68,10 @@ export class MetaMaskService {
         const payload = { walletAddress: accounts[0] };
         return this.requestsService.connect(payload);
       }),
-      tap((response) => {
+      tap((response: { access_token: string; userId: string }) => {
         this.authService.isLoading.next(false);
-        this.authService.setToken(response);
+        this.authService.setUserId(response.userId);
+        this.authService.setToken(response.access_token);
         this.authService.isConnectedSubject.next(true);
         this.toastr.success('Wallet connected successfully.', 'Success');
       }),
